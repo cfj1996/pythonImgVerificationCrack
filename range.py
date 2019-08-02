@@ -46,8 +46,4 @@ def init(QK, BG):
     x, y = np.unravel_index(result.argmax(), result.shape)
     aa = cv2.imread(BG) # 背景图片画出位置
     cv2.rectangle(aa, (y+4, x+4), (y+4 + max(Y)-min(Y), x+4 + max(X)-min(Y)), (255, 0, 0), 1)
-    return (y)
-    # print('平移', y+4)
-    # cv2.imshow('img', aa)  # 展示图片
-    # cv2.waitKey(0)
-    # cv2.destroyAllWindows()
+    return y

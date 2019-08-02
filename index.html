@@ -5,9 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <script src="./click.js"></script>
+    <!-- <script src="./click.js"></script> -->
+    <style>
+        div{
+            box-sizing: border-box;
+            border: 1px solid red;
+            padding: 10px;
+            position: relative;
+        }
+        .d1{
+            width: 150px;
+            height: 150px;
+        }
+        .d2{
+            width: 100%;
+            height: 100%;
+        }
+        .d3{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 </head>
 <body>
-    <div style="width: 150px;height: 50px;background: red" onmousedown="down(event)" onmousemove="over(event)" onmouseup="up()"></div>
+    <!-- <div style="width: 150px;height: 50px;background: red" onmousedown="down(event)" onmousemove="over(event)" onmouseup="up()"></div> -->
+    <div class="d1">
+        <div class="d2">
+            <div class="d3"></div>
+        </div>
+    </div>
 </body>
+<script>
+    document.querySelector('.d1').addEventListener('click', function(){console.log('d1')}, false)
+    document.querySelector('.d2').addEventListener('click', function(){console.log('d2')}, false)
+    document.querySelector('.d3').addEventListener('click', function(){console.log('d3')}, false)
+
+</script>
 </html>
