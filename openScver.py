@@ -24,7 +24,7 @@ def init(URL):
             EC.presence_of_element_located((By.CLASS_NAME, "geetest_absolute"))
         )
     except:
-        print('geetest_absolute未加载')
+        print('\033[1;35m geetest_absolute未加载 \033[0m')
         driver.close()
     finally:
         try:
@@ -41,7 +41,7 @@ def init(URL):
                     EC.presence_of_element_located((By.CLASS_NAME, "searchURL"))
                 )
             except:
-                print('验证失败')
+                print('\033[1;35m 验证失败 \033[0m')
                 driver.close()
             finally:
                 try:

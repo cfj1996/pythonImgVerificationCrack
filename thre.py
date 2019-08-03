@@ -1,10 +1,12 @@
+# 博客园数据爬取
 import queue
 import threading
 import time
 import openScver
 import pymysql
 from datetime import datetime
-
+threadCount = 5 #线程数
+maxPage = 50 #页面数
 
 exitFlag = 0
 
@@ -26,7 +28,7 @@ def process_data(threadName,q, db):
         if not workQueue.empty():
             data = q.get()
             queueLock.release()            
-            dataList = openScver.init("https://zzk.cnblogs.com/s/blogpost?Keywords=前端面试题&pageindex=" + str(data))
+            dataList = openScver.init("https://zzk.cnblogs.com/s/blogpost?Keywords=javascript前端面试题&pageindex=" + str(data))
             print('数据长度', len(dataList))
             if(len(dataList)):
                 try:
@@ -39,9 +41,9 @@ def process_data(threadName,q, db):
         else:
             queueLock.release()
 threadList=[]
-for i in range(5):
+for i in range(threadCount):
     threadList.append('线程'+str(i+1))
-nameList = range(1,51)
+nameList = range(1,maxPage+1)
 queueLock = threading.Lock()
 workQueue = queue.Queue()
 
