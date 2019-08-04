@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,38 +8,309 @@
     <title>Document</title>
     <!-- <script src="./click.js"></script> -->
     <style>
-        div{
-            box-sizing: border-box;
-            border: 1px solid red;
-            padding: 10px;
-            position: relative;
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
         }
-        .d1{
-            width: 150px;
-            height: 150px;
+
+        .cnblogs_code {
+            background-color: #f5f5f5;
+            font-family: Courier New !important;
+            font-size: 12px !important;
+            border: 1px solid #ccc;
+            padding: 5px;
+            overflow: auto;
+            margin: 5px 0;
+            color: #000;
         }
-        .d2{
-            width: 100%;
-            height: 100%;
-        }
-        .d3{
-            width: 100%;
-            height: 100%;
+
+        .cnblogs_code pre {
+            font-family: Courier New !important;
+            font-size: 12px !important;
+            white-space: pre-wrap;
         }
     </style>
 </head>
+
 <body>
     <!-- <div style="width: 150px;height: 50px;background: red" onmousedown="down(event)" onmousemove="over(event)" onmouseup="up()"></div> -->
-    <div class="d1">
-        <div class="d2">
-            <div class="d3"></div>
-        </div>
+    <div id="cnblogs_post_body" class="blogpost-body">
+        <style>
+            <!--
+            p.p1 {
+                margin: 0.0px 0.0px 0.0px 0.0px;
+                text-align: justify;
+                font: 10.5px 'Trebuchet MS';
+                color: #000000;
+                -webkit-text-stroke: #000000
+            }
+
+            p.p2 {
+                margin: 0.0px 0.0px 0.0px 0.0px;
+                text-align: justify;
+                font: 10.5px 'Trebuchet MS';
+                color: #000000;
+                -webkit-text-stroke: #000000;
+                min-height: 12.0px
+            }
+
+            span.s1 {
+                font-kerning: none
+            }
+
+            span.Apple-tab-span {
+                white-space: pre
+            }
+            -->
+        </style>
+        <p class="p1"><span class="s1">## 前端面试题</span></p>
+        <p class="p2"><span class="s1">&nbsp;</span></p>
+        <p class="p1"><span class="s1">1、简述以下常见标签的语义以及默认的display值：p, li, ul, form, b，img，这几个dispaly值的区别是什么？</span></p>
+        <p class="p1"><span class="s1">p 段落 display: block;</span></p>
+        <p class="p1"><span class="s1">li 列表 display: block;</span></p>
+        <p class="p1"><span class="s1">ul 列表 display: block;</span></p>
+        <p class="p1"><span class="s1">form 表单 display: block;</span></p>
+        <p class="p1"><span class="s1">​b 粗体 display: inline;</span></p>
+        <p class="p1"><span class="s1">img 图片 display: inline-block;</span></p>
+        <p class="p2"><span class="s1">&nbsp;</span></p>
+        <p class="p1"><span class="s1">区别：</span></p>
+        <p class="p1"><span class="s1">block元素</span></p>
+        <p class="p1"><span class="s1"><span class="Apple-tab-span"> 1、如果没有设置宽度会自动填满父容器</span></span></p>
+        <p class="p1"><span class="s1"><span class="Apple-tab-span"> 2、可以应用margin/padding</span></span></p>
+        <p class="p1"><span class="s1"><span class="Apple-tab-span"> 3、如果没有设置高度会拓展高度，包含常规流子元素</span></span></p>
+        <p class="p1"><span class="s1"><span class="Apple-tab-span"> 4、处于常规流前后元素独占水平空间</span></span></p>
+        <p class="p1"><span class="s1"><span class="Apple-tab-span"> 5、忽略vertical-align</span></span></p>
+        <p class="p1"><span class="s1">inline元素</span></p>
+        <p class="p1"><span class="s1"><span class="Apple-tab-span"> 1、水平方向从左到右依次布局</span></span></p>
+        <p class="p1"><span class="s1"><span class="Apple-tab-span"> 2、margin/padding 在垂直方向无效，在水平方向有效</span></span></p>
+        <p class="p1"><span class="s1"><span class="Apple-tab-span"> 3、不会再元素前后换行</span></span></p>
+        <p class="p1"><span class="s1"><span class="Apple-tab-span"> 4、浮动或绝对定位自动转换成 block</span></span></p>
+        <p class="p1"><span class="s1"><span class="Apple-tab-span"> 5、vertical-align属性无效</span></span></p>
+        <p class="p1"><span class="s1"><span class="Apple-tab-span"> 6、元素宽度由元素内容决定</span></span></p>
+        <p class="p1"><span class="s1">inline-block 元素</span></p>
+        <p class="p1"><span class="s1"><span class="Apple-tab-span"> 1、可以设置宽高</span></span></p>
+        <p class="p1"><span class="s1"><span class="Apple-tab-span"> 2、其他基本同 inline元素属性</span></span></p>
+        <p class="p2"><span class="s1">&nbsp;</span></p>
+        <p class="p1"><span class="s1">2、写一个布局：要求：整体尺寸等于浏览器窗口的尺寸，设置最小高度和最小宽度，</span></p>
+        <p class="p1"><span class="s1">顶栏高度固定50px, 侧栏宽度固定200px, 内容部分占据剩余的空间，</span></p>
+        <p class="p1"><span class="s1">如图：</span></p>
+        <p class="p2"><span class="s1">&nbsp;</span></p>
+        <p class="p1"><span class="s1">![](http://text-learn.qiniudn.com/屏幕快照 2017-02-27 下午2.44.47.png)</span></p>
+        <p class="p2"><span class="s1">&nbsp;</span></p>
+        <p class="p2"><span class="s1">&nbsp;</span></p>
+        <p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
+        <p class="p1"><span class="s1">&lt;html lang="en"&gt;</span></p>
+        <p class="p2"><span class="s1">&nbsp;</span></p>
+        <p class="p1"><span class="s1">&lt;head&gt;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &lt;meta charset="UTF-8"&gt;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &lt;title&gt;index&lt;/title&gt;</span></p>
+        <p class="p1"><span class="s1">&lt;/head&gt;</span></p>
+        <p class="p1"><span class="s1">&lt;style type="text/css"&gt;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; * {</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; margin: 0;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; padding: 0;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; font: normal 14px "Microsoft YaHei";</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; }</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; html,body {</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; height: 100%;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; overflow: hidden;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; border: none;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; } &nbsp;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; .layout {</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; position: relative;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; z-index: 0;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; min-width: 1260px;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; min-height: 600px;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; }</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; .layout-top {</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; height: 50px;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; width: 100%;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; border:1px solid #000;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; }</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; .layout-sider {</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; position: absolute;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; left: 0;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; top: 50px;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; bottom: 0;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; width: 200px;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; float: left;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; border-right: 1px solid #000;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; }</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; .accordion {</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; position: absolute;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; left: 0;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; top: 0;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; bottom: 0;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; width: 200px;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; height: auto;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; overflow-y: auto;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; overflow-x: hidden;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; }</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; .accordion .accordion-menus {</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; text-align: center;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; font-size: 1em;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; }</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; .accordion .accordion-menus li {</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; height: 40px;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; line-height: 36px;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; transition: border-left 220ms ease-in;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; }</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; .layout-right {</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; position: absolute;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; left: 200px;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; top: 50px;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; right: 0;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; bottom: 0;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; }</span></p>
+        <p class="p1"><span class="s1">&lt;/style&gt;</span></p>
+        <p class="p2"><span class="s1">&nbsp;</span></p>
+        <p class="p1"><span class="s1">&lt;body class="layout"&gt;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &lt;div class="layout-top"&gt;&lt;/div&gt;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &lt;div class="layout-sider"&gt;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class="accordion"&gt;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;ul
+                class="accordion-menus"&gt;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                &lt;li&gt;caidan1&lt;/li&gt;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                &lt;li&gt;caidan2&lt;/li&gt;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/ul&gt;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &lt;/div&gt;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &lt;div class="layout-right"&gt;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; &lt;iframe id="rightMain" scrolling="auto"
+                frameborder="0" src="" style="width:100%;height:100%;"&gt;&lt;/iframe&gt;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &lt;/div&gt;</span></p>
+        <p class="p1"><span class="s1">&lt;/body&gt;</span></p>
+        <p class="p2"><span class="s1">&nbsp;</span></p>
+        <p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+        <p class="p2"><span class="s1">&nbsp;</span></p>
+        <p class="p2"><span class="s1">&nbsp;</span></p>
+        <p class="p1"><span class="s1">3、有哪些方法可以隐藏元素？</span></p>
+        <p class="p1"><span class="s1"><span class="Apple-tab-span"> 1、display:none;</span></span></p>
+        <p class="p1"><span class="s1"><span class="Apple-tab-span"> 2、visibility: hidden;</span></span></p>
+        <p class="p1"><span class="s1"><span class="Apple-tab-span"> 3、opacity: 0;</span></span></p>
+        <p class="p2">&nbsp;</p>
+        <p class="p1"><span class="s1">4、什么是跨域？都有哪些方式可以进行跨域？</span></p>
+        <p class="p1"><span class="s1"><span class="Apple-tab-span"> 跨域就是不同域名下的通信来往。</span></span></p>
+        <p class="p1"><span class="s1"><span class="Apple-tab-span"> 跨域方式：</span></span></p>
+        <p class="p1"><span class="s1"><span class="Apple-tab-span"> <span class="Apple-tab-span"> 1、jsonp
+                        请求</span></span></span></p>
+        <p class="p1"><span class="s1"><span class="Apple-tab-span"> <span class="Apple-tab-span"> 2、
+                        HTML5新规范的CORS功能,只要目标服务器返回请求头部**Access-Control-Allow-Origin: *** 即可</span></span></span></p>
+        <p class="p1"><span class="s1"><span class="Apple-tab-span"> <span class="Apple-tab-span">
+                        3、通过内部服务器代理，实现跨域</span></span></span></p>
+        <p class="p1"><span class="s1"><span class="Apple-tab-span"> <span class="Apple-tab-span">
+                        4、&lt;img&gt;,&lt;script&gt;,&lt;link&gt;,&lt;iframe&gt;，通过src，href属性设置为目标url,实现跨域请求</span></span></span>
+        </p>
+        <p class="p2">&nbsp;</p>
+        <p class="p1"><span class="s1">5、简述jsonp的原理</span></p>
+        <p class="p1"><span class="s1"><span class="Apple-tab-span"> 通过&lt;script&gt;标签没有跨域限制来进行数据交互。</span></span></p>
+        <p class="p1"><span class="s1">&nbsp;&nbsp; &nbsp; &nbsp; 就是提供一个回调函数接受json数据，在浏览器中执行并处理穿过来的数据。</span></p>
+        <p class="p2"><span class="s1">&nbsp;</span></p>
+        <p class="p1"><span class="s1">6、如何设计一个轮播插件，用伪代码简述思路</span></p>
+        <p class="p1"><span class="s1"><span class="Apple-tab-span"> 初始化让所有的图片样式</span></span></p>
+        <p class="p1"><span class="s1"><span class="Apple-tab-span"> <span class="Apple-tab-span">
+                        z-index:0,display:none</span></span></span></p>
+        <p class="p1"><span class="s1"><span class="Apple-tab-span"> 默认第一个图片显示 z-index:4,display:block</span></span></p>
+        <p class="p2"><span class="s1">&nbsp;</span></p>
+        <p class="p1"><span class="s1"><span class="Apple-tab-span"> t = setInterval(move, 5000);</span></span></p>
+        <p class="p1"><span class="s1"><span class="Apple-tab-span"> function move() {</span></span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; <span class="Apple-tab-span"> <span class="Apple-tab-span">
+                        num++;</span></span></span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; <span class="Apple-tab-span"> <span class="Apple-tab-span"> if (num
+                        == imglen) {</span></span></span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; <span class="Apple-tab-span"> <span class="Apple-tab-span">
+                        <span class="Apple-tab-span"> num = 0;</span></span></span></span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; <span class="Apple-tab-span"> <span class="Apple-tab-span">
+                        };</span></span></span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; <span class="Apple-tab-span"> <span class="Apple-tab-span">
+                        show(num);</span></span></span></p>
+        <p class="p1"><span class="s1">&nbsp; <span class="Apple-tab-span"> };</span></span></p>
+        <p class="p2"><span class="s1">&nbsp;</span></p>
+        <p class="p1"><span class="s1"><span class="Apple-tab-span"> function show(index) {</span></span></p>
+        <p class="p1"><span class="s1"><span class="Apple-tab-span"> <span class="Apple-tab-span">
+                        给index当前元素添加活动类显示隐藏</span></span></span></p>
+        <p class="p1"><span class="s1"><span class="Apple-tab-span"> }</span></span></p>
+        <p class="p2">&nbsp;</p>
+        <p class="p1"><span class="s1"><span class="Apple-tab-span"> 鼠标放在容器时，清除t，离开继续执行 t = setInterval(move,
+                    5000);</span></span></p>
+        <p class="p2"><span class="s1">&nbsp;</span></p>
+        <p class="p1"><span class="s1">7、如何实现一个移动端"tap"事件</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; function tap(d,callback) {</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; var startTime = 0,</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; delayTime = 200,</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; isMove = false;</span></p>
+        <p class="p2"><span class="s1">&nbsp;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; d.addEventListener("touchstart",function(){</span>
+        </p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; startTime = Date.now();</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; },false)</span></p>
+        <p class="p2"><span class="s1">&nbsp;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; d.addEventListener("touchmove",function(){</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; isMove = true;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; },false)</span></p>
+        <p class="p2"><span class="s1">&nbsp;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; d.addEventListener("touchend",function(){</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if(isMove) return;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if(Date.now()-startTime&gt;delayTime)
+                return;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; callback();</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; },false)</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; }</span></p>
+        <p class="p1"><span class="s1">8、前端有哪几种本地存储方式，简述各自的特点</span></p>
+        <p class="p1"><span class="s1"><span class="Apple-tab-span"> localStorage、 sessionStorage、 cookie、web
+                    sql</span></span></p>
+        <p class="p2">&nbsp;</p>
+        <p class="p1"><span class="s1"><span class="Apple-tab-span"> localStorage:</span></span></p>
+        <p class="p1"><span class="s1"><span class="Apple-tab-span"> <span class="Apple-tab-span">
+                        1、有效期永久</span></span></span></p>
+        <p class="p1"><span class="s1"><span class="Apple-tab-span"> <span class="Apple-tab-span">
+                        2、同源可以读取并修改localStorage数据</span></span></span></p>
+        <p class="p1"><span class="s1"><span class="Apple-tab-span"> sessionStorage:</span></span></p>
+        <p class="p1"><span class="s1"><span class="Apple-tab-span"> <span class="Apple-tab-span">
+                        1、有效期顶层窗口关闭前</span></span></span></p>
+        <p class="p1"><span class="s1"><span class="Apple-tab-span"> <span class="Apple-tab-span">
+                        2、值允许同一窗口访问</span></span></span></p>
+        <p class="p1"><span class="s1"><span class="Apple-tab-span"> cookie：</span></span></p>
+        <p class="p1"><span class="s1"><span class="Apple-tab-span"> <span class="Apple-tab-span">
+                        1、有效期可以设置</span></span></span></p>
+        <p class="p1"><span class="s1"><span class="Apple-tab-span"> <span class="Apple-tab-span">
+                        2、cookie作用域通过文档源和文档路径来确定</span></span></span></p>
+        <p class="p1"><span class="s1"><span class="Apple-tab-span"> <span class="Apple-tab-span">
+                        3、储存数据量小</span></span></span></p>
+        <p class="p1"><span class="s1"><span class="Apple-tab-span"> web sql：</span></span></p>
+        <p class="p1"><span class="s1"><span class="Apple-tab-span"> <span class="Apple-tab-span">
+                        1、可以储存大量结构化数据</span></span></span></p>
+        <p class="p2">&nbsp;</p>
+        <p class="p1"><span class="s1">9、写一个js函数，实现对一个数字每3位加一个逗号，如输入100000， 输出100,000</span></p>
+        <p class="p1"><span class="s1"><span class="Apple-tab-span"> function farmat(mun) {</span></span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; if (mun === null) return;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; var m = parseInt(mun).toString();</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; var len = m.length;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; if (len &lt;= 3) return m;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; var n = len % 3;</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; if (n &gt; 0) {</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return
+                m.slice(0,n)+","+m.slice(n,len).match(/\d{3}/g).join(",")</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; } else {</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return
+                m.slice(n,len).match(/\d{3}/g).join(",")</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; &nbsp; &nbsp; }</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; }</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; var a =farmat(100000)</span></p>
+        <p class="p1"><span class="s1">&nbsp; &nbsp; console.log(a);</span></p>
+        <p class="p1"><span class="s1">10、简述常见的http状态码</span></p>
+        <p class="p1"><span class="s1"><span class="Apple-tab-span"> 200 请求成功</span></span></p>
+        <p class="p1"><span class="s1"><span class="Apple-tab-span"> 404 Not Found</span></span></p>
+        <p class="p1"><span class="s1"><span class="Apple-tab-span"> 500 服务端错误</span></span></p>
+        <p class="p1"><span class="s1">11、什么是事件代理，它的实现原理是什么？</span></p>
+        <p class="p2"><span class="s1">&nbsp;</span></p>
+        <p class="p1"><span class="s1"><span class="Apple-tab-span"> 通过事件冒泡，指定一个事件处理程序，就可以管理某一类型事件。</span></span></p>
+        <p class="p1"><span class="s1"><span class="Apple-tab-span"> 原理就是事件从最深节点开始逐步向上传播事件。</span></span></p>
+        <p class="p1"><span class="s1">​</span></p>
     </div>
 </body>
-<script>
-    document.querySelector('.d1').addEventListener('click', function(){console.log('d1')}, false)
-    document.querySelector('.d2').addEventListener('click', function(){console.log('d2')}, false)
-    document.querySelector('.d3').addEventListener('click', function(){console.log('d3')}, false)
 
-</script>
 </html>
