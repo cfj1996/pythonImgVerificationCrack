@@ -1,6 +1,8 @@
 import requests
 import pageParse
+import getText
 
-r = requests.get('https://www.cnblogs.com/y896926473/p/6736722.html')
+r = requests.get('https://www.cnblogs.com/sunmyboke/p/10364507.html')
 r.encoding = r.apparent_encoding
-pageParse.parse(r.text)
+# pageParse.parse(r.text)
+getText.get(r.text)

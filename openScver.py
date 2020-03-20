@@ -32,7 +32,7 @@ def init(URL):
             QK = dowimg.init(driver, 'geetest_canvas_slice')
             BG = dowimg.init(driver, 'geetest_canvas_bg')
             L = range.init(QK, BG)
-            setdom.init(ActionChains, driver, L)
+            setdom.init(ActionChains, driver, 'geetest_slider_button', L)
             os.remove(QK)
             os.remove(BG)
             time.sleep(2)
